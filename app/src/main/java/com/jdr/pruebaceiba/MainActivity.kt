@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.toolbar) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
         NavigationUI.setupActionBarWithNavController(this, navHostFragment.navController)
 
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = this.findNavController(R.id.toolbar)
+        val navController = this.findNavController(R.id.container)
         return navController.navigateUp()
     }
 
