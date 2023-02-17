@@ -1,4 +1,4 @@
-package com.jdr.pruebaceiba.ui.main
+package com.jdr.pruebaceiba.ui.publication
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,18 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.jdr.pruebaceiba.databinding.FragmentMainBinding
+import com.jdr.pruebaceiba.databinding.FragmentPublicationBinding
 
-class MainFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
+class PublicationFragment : Fragment() {
+
+    private var _binding: FragmentPublicationBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: PublicationViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
@@ -25,15 +25,9 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
-
-
+        _binding = FragmentPublicationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
 }
