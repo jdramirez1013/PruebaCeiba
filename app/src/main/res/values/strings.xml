@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PruebaCeiba</string>
+
+    <string name="main_test_title">Prueba ingreso</string>
+    <string name="main_see_publication">Ver publicaciones</string>
+    <string name="main_search_user">Buscar usuario</string>
+    <string name="publication_title">Publicaciones</string>
 </resources>

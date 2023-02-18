@@ -8,6 +8,22 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.jdr.pruebaceiba.ui.main.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        android:label="@string/main_test_title"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_publicationFragment"
+            app:destination="@id/publicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/publicationFragment"
+        android:name="com.jdr.pruebaceiba.ui.publication.PublicationFragment"
+        android:label="@string/publication_title"
+        tools:layout="@layout/fragment_publication" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+
 </navigation>
