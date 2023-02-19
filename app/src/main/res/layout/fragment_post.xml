@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.publication.PublicationFragment">
+    tools:context=".ui.post.PostFragment">
 
 
     <include
@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="@dimen/margin_medium"
-        layout="@layout/item_person"/>
+        layout="@layout/item_user"/>
 
     <TextView
         android:id="@+id/tvPublication"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvPublication"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:itemCount="5"
-        tools:listitem="@layout/item_publication"/>
+        tools:listitem="@layout/item_post"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
