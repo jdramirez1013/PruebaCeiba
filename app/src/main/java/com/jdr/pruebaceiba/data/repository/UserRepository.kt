@@ -24,7 +24,10 @@ class UserRepository @Inject constructor(private val api: ApiService, private va
         return response
     }
 
-    suspend fun getUser(userId: Int): UserModel =
+    fun getUser(userId: Int): UserModel =
         userDao.getUser(userId)
+
+    fun getUserSearch(query: String) : List<UserModel> =
+        userDao.getUsersSearch(query)
 
 }

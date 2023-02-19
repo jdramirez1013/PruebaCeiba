@@ -18,4 +18,7 @@ interface UserDao {
     @Query("SELECT * FROM user WHERE id = :id")
     fun getUser(id: Int): UserModel
 
+    @Query("SELECT * FROM user WHERE name LIKE '%' || :query || '%'")
+    fun getUsersSearch(query: String): List<UserModel>
+
 }

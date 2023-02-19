@@ -16,6 +16,18 @@
         android:layout_margin="@dimen/margin"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <TextView
+        android:id="@+id/tvListEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_list_is_empty"
+        android:textSize="@dimen/title_size"
+        android:layout_marginTop="@dimen/margin_large"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPerson"
         android:layout_width="match_parent"
