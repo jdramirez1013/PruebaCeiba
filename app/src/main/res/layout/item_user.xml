@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/namePerson"
+            android:id="@+id/tvNamePerson"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_medium"
@@ -34,12 +34,12 @@
             android:layout_marginStart="@dimen/margin_medium"
             android:layout_marginTop="@dimen/margin"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/namePerson"
+            app:layout_constraintTop_toBottomOf="@+id/tvNamePerson"
             app:srcCompat="@android:drawable/stat_sys_phone_call"
             app:tint="@color/green" />
 
         <TextView
-            android:id="@+id/phone"
+            android:id="@+id/tvPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin"
@@ -59,12 +59,12 @@
             android:layout_marginBottom="@dimen/margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iconPhone"
-            app:layout_constraintBottom_toTopOf="@+id/seePublication"
+            app:layout_constraintBottom_toTopOf="@+id/tvSeePublication"
             app:srcCompat="@android:drawable/ic_dialog_email"
             app:tint="@color/green" />
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/tvEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin"
@@ -76,7 +76,7 @@
             tools:text="email@email.com" />
 
         <TextView
-            android:id="@+id/seePublication"
+            android:id="@+id/tvSeePublication"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="@dimen/margin"
@@ -89,6 +89,6 @@
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

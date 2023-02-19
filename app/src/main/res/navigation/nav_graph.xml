@@ -12,17 +12,17 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_publicationFragment"
-            app:destination="@id/publicationFragment" />
+            app:destination="@id/postFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/publicationFragment"
-        android:name="com.jdr.pruebaceiba.ui.publication.PublicationFragment"
+        android:id="@+id/postFragment"
+        android:name="com.jdr.pruebaceiba.ui.post.PostFragment"
         android:label="@string/publication_title"
-        tools:layout="@layout/fragment_publication" >
+        tools:layout="@layout/fragment_post" >
         <argument
             android:name="userId"
-            app:argType="integer"
-            android:defaultValue="0" />
+            app:argType="integer" />
     </fragment>
 
 

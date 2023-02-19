@@ -5,4 +5,5 @@
     <string name="main_see_publication">Ver publicaciones</string>
     <string name="main_search_user">Buscar usuario</string>
     <string name="publication_title">Publicaciones</string>
+    <string name="loading">Cargando…</string>
 </resources>
