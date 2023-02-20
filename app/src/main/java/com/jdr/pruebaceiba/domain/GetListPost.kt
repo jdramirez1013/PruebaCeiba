@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class GetListPost @Inject constructor(private val repository: PostRepository) {
 
-    suspend fun execute(userId: Int): List<PostModel> =
+    suspend operator fun invoke(userId: Int): List<PostModel> =
         repository.getPosts(userId)
 
 }

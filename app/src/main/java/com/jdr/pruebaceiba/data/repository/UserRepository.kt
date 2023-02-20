@@ -5,29 +5,32 @@ import com.jdr.pruebaceiba.data.remote.ApiService
 import com.jdr.pruebaceiba.model.UserModel
 import javax.inject.Inject
 
-class UserRepository @Inject constructor(private val api: ApiService, private val userDao: UserDao) {
+class UserRepository @Inject constructor(
+    private val api: ApiService,
+    private val userDao: UserDao
+) {
 
-    suspend fun getUsers(): List<UserModel>{
+    suspend fun getUsers(): List<UserModel> {
 
-        val localList = userDao.getAll()
+        val localUsers = userDao.getAll()
 
-        if(localList.isNotEmpty()){
-            return  localList
+        if (localUsers.isNotEmpty()) {
+            return localUsers
         }
 
         val response = api.getUsers()
 
-        response.forEach {
-            userDao.insertUser(it)
+        if (response.isNotEmpty()) {
+            userDao.insertAll(response)
         }
 
         return response
     }
 
-    fun getUser(userId: Int): UserModel =
+    fun getUser(userId: Int): UserModel? =
         userDao.getUser(userId)
 
-    fun getUserSearch(query: String) : List<UserModel> =
+    fun getUsersSearch(query: String): List<UserModel> =
         userDao.getUsersSearch(query)
 
 }

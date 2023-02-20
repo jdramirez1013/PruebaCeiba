@@ -10,13 +10,13 @@ import com.jdr.pruebaceiba.model.UserModel
 interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUser(team: UserModel)
+    suspend fun insertAll(users: List<UserModel>)
 
     @Query("SELECT * FROM user")
     fun getAll(): List<UserModel>
 
     @Query("SELECT * FROM user WHERE id = :id")
-    fun getUser(id: Int): UserModel
+    fun getUser(id: Int): UserModel?
 
     @Query("SELECT * FROM user WHERE name LIKE '%' || :query || '%'")
     fun getUsersSearch(query: String): List<UserModel>

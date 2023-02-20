@@ -5,6 +5,6 @@ import com.jdr.pruebaceiba.model.UserModel
 import javax.inject.Inject
 
 class GetUsersSearch @Inject constructor(private val repository: UserRepository) {
-    suspend fun execute(query: String): List<UserModel> =
-        repository.getUserSearch(query)
+    operator fun invoke(query: String): List<UserModel> =
+        repository.getUsersSearch(query)
 }

@@ -47,8 +47,8 @@ class PostFragment : Fragment() {
             rvPublication.layoutManager = LinearLayoutManager(context)
         }
 
-        viewModel.getUser(args.userId)
-        viewModel.getPosts(args.userId)
+        viewModel.getUserAndPostById(args.userId)
+
 
         binding.iPerson.tvSeePublication.visibility = View.GONE
     }

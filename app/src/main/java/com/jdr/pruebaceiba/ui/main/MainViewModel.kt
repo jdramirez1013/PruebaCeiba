@@ -27,7 +27,7 @@ class MainViewModel @Inject constructor(
     private fun getUsers() {
         isLoading.value = true
         viewModelScope.launch(Dispatchers.IO) {
-            val response = getListUsers.execute()
+            val response = getListUsers()
             viewModelScope.launch(Dispatchers.Main) {
                 listUser.value = response
                 isLoading.value = false
@@ -35,9 +35,9 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun getUsersSearch(query: String) {
+    fun getUsersBySearch(query: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = getUsersSearch.execute(query)
+            val response = getUsersSearch(query)
             viewModelScope.launch(Dispatchers.Main) {
                 emptyList.value = response.isEmpty()
                 listUser.value = response

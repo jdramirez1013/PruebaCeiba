@@ -6,7 +6,9 @@ import javax.inject.Inject
 
 class GetUser @Inject constructor(private val repository: UserRepository){
 
-    suspend fun execute(userId: Int): UserModel =
+    operator fun invoke(userId: Int): UserModel? =
         repository.getUser(userId)
+
+
 
 }

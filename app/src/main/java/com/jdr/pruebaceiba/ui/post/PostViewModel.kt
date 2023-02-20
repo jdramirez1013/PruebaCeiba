@@ -21,20 +21,22 @@ class PostViewModel @Inject constructor(
     var user = MutableLiveData<UserModel>()
     var isLoading = MutableLiveData<Boolean>()
 
-    fun getUser(userId: Int){
+    fun getUserAndPostById(userId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = getUser.execute(userId)
-            viewModelScope.launch(Dispatchers.Main){
-                user.value = response
+            val response = getUser(userId)
+            if (response != null) {
+                viewModelScope.launch(Dispatchers.Main) {
+                    user.value = response!!
+                }
             }
-
         }
+        getPosts(userId)
     }
 
-    fun getPosts(userId: Int){
+    private fun getPosts(userId: Int) {
         isLoading.value = true
         viewModelScope.launch(Dispatchers.IO) {
-            val response = getListPost.execute(userId)
+            val response = getListPost(userId)
             viewModelScope.launch(Dispatchers.Main) {
                 listPost.value = response
                 isLoading.value = false

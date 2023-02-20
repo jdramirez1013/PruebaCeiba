@@ -11,7 +11,7 @@ class ApiService @Inject constructor(private val apiClient: ApiClient) {
     suspend fun getUsers(): List<UserModel> {
         return withContext(Dispatchers.IO) {
             val response = apiClient.getUsers()
-            response.body() ?: arrayListOf()
+            response.body() ?: listOf()
         }
     }
 

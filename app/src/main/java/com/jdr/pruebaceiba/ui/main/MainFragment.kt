@@ -67,7 +67,7 @@ class MainFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                viewModel.getUsersSearch(newText!!)
+                viewModel.getUsersBySearch(newText!!)
                 return true
             }
 
